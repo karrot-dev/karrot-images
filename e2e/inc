@@ -1,4 +1,4 @@
 #!/bin/bash
 
-export IMAGE=karrot/e2e:1.0
+export IMAGE=karrot/e2e:1.1
 
