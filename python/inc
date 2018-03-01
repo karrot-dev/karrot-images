@@ -1,4 +1,4 @@
 #!/bin/bash
 
-export IMAGE=karrot/python:1.4
+export IMAGE=karrot/python:1.5
 
