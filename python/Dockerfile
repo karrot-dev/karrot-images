@@ -8,7 +8,7 @@ RUN apt-get update && \
         python3.5-dev \
         virtualenv
 
-RUN curl -s https://deb.nodesource.com/setup_9.x | bash - && \
+RUN curl -s https://deb.nodesource.com/setup_10.x | bash - && \
     apt-get update && \
     apt-get install -y nodejs
 
@@ -23,8 +23,6 @@ RUN apt-get install -y git
 
 RUN apt-get install -y python3-pip
 
-RUN pip3 install ansible
-
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" > \
       /etc/apt/sources.list.d/yarn.list && \
@@ -32,4 +30,7 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
 
 RUN apt-get update && \
     apt-get install -y wget rsync && \
-    pip3 install --upgrade pip pip-tools codecov requests
+    pip3 install --upgrade pip==10.0.1 pip-tools==2.0.2
+
+COPY requirements.txt /tmp/
+RUN pip3 install -r /tmp/requirements.txt
