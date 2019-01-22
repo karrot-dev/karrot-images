@@ -1,4 +1,4 @@
 #!/bin/bash
 
-export IMAGE=karrot/android-build:api-28-node8-alpha-1
+export IMAGE=karrot/android-build:api-28-node8-alpha-2
 
